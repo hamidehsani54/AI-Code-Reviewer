@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>AI Code Reviewer</h2>
+
+<textarea id="code" rows="15" cols="80"></textarea><br><br>
+<button onclick="submitCode()">Review Code</button>
+
+<pre id="output"></pre>
+
+<script>
+async function submitCode() {
+    const code = document.getElementById("code").value;
+    const formData = new FormData();
+    formData.append("code", code);
+
+    const res = await fetch("http://127.0.0.1:8000/review-code", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await res.json();
+    document.getElementById("output").textContent = data.review;
+}
+</script>
+</body>
+</html>
