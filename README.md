@@ -1,5 +1,4 @@
-````markdown
-# AI Code Reviewer
+# YouTube Video Summarizer
 
 A web app that reviews your code using OpenAI’s API. It analyzes code files and provides automated feedback on readability, structure, and best practices.
 
